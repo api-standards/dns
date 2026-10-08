@@ -1,0 +1,10 @@
+---
+# Root NS records (*.porkbun.com) are managed by Porkbun and not supported by the provider.
+? ''
+: ttl: 600
+  type: ALIAS
+  value: pixie.porkbun.com.
+'*':
+  ttl: 600
+  type: CNAME
+  value: pixie.porkbun.com.
