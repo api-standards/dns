@@ -8,3 +8,7 @@
   ttl: 600
   type: CNAME
   value: pixie.porkbun.com.
+_github-pages-challenge-api-standards:
+  ttl: 600
+  type: TXT
+  value: c1ac1828758e74fa7d41a7b97f05bc
