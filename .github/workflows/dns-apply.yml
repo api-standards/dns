@@ -32,4 +32,9 @@ jobs:
         env:
           PORKBUN_API_KEY: ${{ secrets.PORKBUN_API_KEY }}
           PORKBUN_SECRET_KEY: ${{ secrets.PORKBUN_SECRET_KEY }}
-        run: octodns-sync --config-file=config/octodns.yaml --doit
+        run: |
+          if [ -z "$PORKBUN_API_KEY" ] || [ -z "$PORKBUN_SECRET_KEY" ]; then
+            echo "::error::PORKBUN_API_KEY and/or PORKBUN_SECRET_KEY are empty. Add them as secrets on the repository or the 'production' environment."
+            exit 1
+          fi
+          octodns-sync --config-file=config/octodns.yaml --doit
